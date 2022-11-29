@@ -1,0 +1,36 @@
+Exercice 1 :
+
+Identifiez dans vos entreprise actuelles :
+koesio occitanie (rodez) entrpise de prestation informatique (vente, installation et maintenance de matériels informatiques et de logiciels)
+rôle : technicien informatique
+
+    les silots s'il y en a :
+    - Pas de Dev dans mon entreprise
+
+    les pratiques dévops :
+    - Test continue
+    - Automatisation préparation PC (déploiement) PXE
+    - Scripting (powershell, bash), pour gestion paramétrage GPO, déploiement logiciel et PC
+
+    le schéma d'architecture globale :
+    - Pas d'application
+
+    processus de build :
+    - Pas de build
+
+    processus de déploiement :
+    - Pas de déploiement
+
+    processus de release :
+    - Pas de release
+
+    les moyens mis en oeuvre pour tester :
+    - Pas de test, appel quand s'est cassé
+
+    Identifier les points de blocage et bons points s'il y en a :
+    - Pas de test réel
+    - Automatisation, gain de temps
+
+    Identifier les outils utilisés :
+    - PXE
+    - Bash, powersshell
