@@ -232,3 +232,9 @@ l'argument --link permet de lier le container phpmyadmin au container mysql_serv
 on peut acceder a phpmyadmin via l'url http://localhost:8080
 
 ![phpmyadmin](/louis/assets/img/phpmyadmin.png)
+
+# Utilisation de docker-compose.yml
+
+## a. Allez lire la documentation de docker-compose et essayer de décrire à quoi sert cette commande VS la commande docker run
+
+docker-compose est un outil qui permet de definir et de lancer des applications docker composees de plusieurs containers
