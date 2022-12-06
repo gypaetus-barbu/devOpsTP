@@ -115,3 +115,45 @@ docker build -t my-nginx .
 
 Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
 ```
+
+## b. Exécuter cette nouvelle image de manière à servir./html/index.html
+
+```Dockefile
+FROM nginx:latest
+
+COPY $PWD/html/index.html /usr/share/nginx/html/index.html
+
+EXPOSE 80
+```
+
+pour build l'image on utilise la commande suivante
+
+```bash
+docker build -t my-nginx .
+
+ => [internal] load build definition from Dockerfile                                                                0.1s
+ => => transferring dockerfile: 128B                                                                                0.0s
+ => [internal] load .dockerignore                                                                                   0.1s
+ => => transferring context: 2B                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/nginx:latest                                                     0.0s
+ => [internal] load build context                                                                                   0.1s
+ => => transferring context: 82B                                                                                    0.0s
+ => [1/2] FROM docker.io/library/nginx:latest                                                                       0.1s
+ => [2/2] COPY ./html/index.html /usr/share/nginx/html/index.html                                                   0.1s
+ => exporting to image                                                                                              0.1s
+ => => exporting layers                                                                                             0.0s
+ => => writing image sha256:fd1c772dde6912737a5b9592d394a723f938a82c0caf6fd14c52b599d62790a7                        0.0s
+ => => naming to docker.io/library/my-nginx                                                                         0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+```
+
+pour run notre image on utilise la commande suivante
+
+```bash
+docker run -d -p 80:80 my-nginx
+
+docker ps
+CONTAINER ID   IMAGE      COMMAND                  CREATED         STATUS         PORTS                NAMES
+c2783c25eee7   my-nginx   "/docker-entrypoint.…"   4 seconds ago   Up 3 seconds   0.0.0.0:80->80/tcp   xenodochial_greider
+```
