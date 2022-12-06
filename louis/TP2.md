@@ -157,3 +157,7 @@ docker ps
 CONTAINER ID   IMAGE      COMMAND                  CREATED         STATUS         PORTS                NAMES
 c2783c25eee7   my-nginx   "/docker-entrypoint.…"   4 seconds ago   Up 3 seconds   0.0.0.0:80->80/tcp   xenodochial_greider
 ```
+
+## C. Quelles différences observez-vous entre les questions 3. et 4., trouvez les vantages & inconvénients de chaque procédure
+
+en creant une image avec un dockerfile on peut avoir un controle plus fin sur l'image que l'on va creer, on peut par exemple ajouter des variables d'environnement, des commandes, des fichiers de configuration, etc.
