@@ -53,3 +53,20 @@ Hello World
 ```bash
 docker run -d -p 80:80 -v $PWD/html:/usr/share/nginx/html:ro nginx
 ```
+
+## e. Supprimer le container
+
+```bash
+docker container ls
+
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                NAMES
+c48e5c17bed4   nginx     "/docker-entrypoint.…"   8 minutes ago   Up 8 minutes   0.0.0.0:80->80/tcp   vigilant_lumiere
+
+docker container stop c48e5c17bed4
+
+c48e5c17bed4
+
+docker container rm c48e5c17bed4
+
+c48e5c17bed4
+```
