@@ -33,3 +33,16 @@ docker image ls
 REPOSITORY               TAG       IMAGE ID       CREATED       SIZE
 nginx                    latest    ac8efec875ce   9 hours ago   142MB
 ```
+
+
+## c. Créer un fichier dans votre repo local ./html/index.html qui contient "Hello World"
+
+```bash
+mkdir html
+
+echo "Hello World" > ./html/index.html
+
+cat ./html/index.html
+
+Hello World
+```
