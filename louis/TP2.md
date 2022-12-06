@@ -252,3 +252,38 @@ pour stopper les containers on utilise la commande suivante
 ```bash
 docker-compose down
 ```
+
+## c. Ecrivez un fichier docker-compose.yml pour servir votre base de données (mysql, mariadb, etc.) ET phpmyadmin
+
+pour utiliser docker-compose on doit creer un fichier docker-compose.yml
+
+```yml
+version: '3.8'
+
+services:
+  mysql_server:
+    image: mysql
+    container_name: mysql_server
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - 3306:3306
+    volumes:
+      - $PWD/data:/var/lib/mysql
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    ports:
+      - 8080:80
+    links:
+      - mysql_server:db
+    restart: always
+```
+
+dans cette exemple on a 2 containers, le premier est un container mysql et le second est un container phpmyadmin
+
+on peut retouver l'ensenble des configuration dans la commande docker run dans le fichier docker-compose.yml
+
+pour acceder a phpmyadmin on utilise l'url http://localhost:8080
