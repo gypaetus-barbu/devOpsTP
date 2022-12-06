@@ -79,7 +79,7 @@ docker run -d -p 80:80 nginx
 docker container ls
 
 CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                NAMES
-c48e5c17bed4   nginx     "/docker-entrypoint.…"   8 minutes ago   Up 8 minutes
+c48e5c17bed4   nginx     "/docker-entrypoint.…"   8 minutes ago   Up 8 minutes   0.0.0.0:80->80/tcp   zen_pike
 
 docker cp $PWD/html/index.html c48e5c17bed4:/usr/share/nginx/html/index.html
 ```
