@@ -216,3 +216,19 @@ Digest: sha256:ae6dadd9cf3c158e42937788f7255fa820ea3daef0349226d8d43f32e76535e1
 Status: Downloaded newer image for phpmyadmin/phpmyadmin:latest
 docker.io/phpmyadmin/phpmyadmin:latest
 ```
+
+## b. Exécuter 2 containers à partir des images, ajouter une table et quelques lignes dans vote base via phpmyadmin
+
+pour run les containers on utilise la commande suivante
+
+```bash
+docker run --name mysql_server -e MYSQL_ROOT_PASSWORD=123456 -d mysql
+
+docker run --name phpmyadmin -d --link mysql_server:db -p 8080:80 phpmyadmin/phpmyadmin
+```
+
+l'argument --link permet de lier le container phpmyadmin au container mysql_server, on peut donc acceder a la base de donnees du container mysql_server depuis le container phpmyadmin
+
+on peut acceder a phpmyadmin via l'url http://localhost:8080
+
+![phpmyadmin](/louis/assets/img/phpmyadmin.png)
