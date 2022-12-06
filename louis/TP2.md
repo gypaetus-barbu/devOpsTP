@@ -46,3 +46,10 @@ cat ./html/index.html
 
 Hello World
 ```
+
+
+## d. d. Démarrer un nouveau container et servir la page html créée précédemment à l'aide d'une référence absolue
+
+```bash
+docker run -d -p 80:80 -v $PWD/html:/usr/share/nginx/html:ro nginx
+```
