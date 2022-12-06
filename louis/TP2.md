@@ -24,3 +24,12 @@ Status: Downloaded newer image for nginx:latest
 docker.io/library/nginx:latest
 ```
 
+
+## b. Utiliser une commande pour vérifier que vous disposez bien de l'image en local
+
+```bash
+docker image ls
+
+REPOSITORY               TAG       IMAGE ID       CREATED       SIZE
+nginx                    latest    ac8efec875ce   9 hours ago   142MB
+```
