@@ -83,3 +83,35 @@ c48e5c17bed4   nginx     "/docker-entrypoint.…"   8 minutes ago   Up 8 minutes
 
 docker cp $PWD/html/index.html c48e5c17bed4:/usr/share/nginx/html/index.html
 ```
+
+# Builder une image
+
+## a. A l'aide d'un Dockerfile, créer une image qui permet d'exécuter un serveur web (apache, nginx)
+
+```Dockefile
+
+FROM nginx:latest
+
+EXPOSE 80
+
+```
+
+pour build l'image on utilise la commande suivante
+
+```bash
+docker build -t my-nginx .
+
+[+] Building 0.2s (5/5) FINISHED
+ => [internal] load build definition from Dockerfile                                                                0.0s
+ => => transferring dockerfile: 71B                                                                                 0.0s
+ => [internal] load .dockerignore                                                                                   0.0s
+ => => transferring context: 2B                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/nginx:latest                                                     0.0s
+ => CACHED [1/1] FROM docker.io/library/nginx:latest                                                                0.0s
+ => exporting to image                                                                                              0.0s
+ => => exporting layers                                                                                             0.0s
+ => => writing image sha256:9d30e28a261fff3216442e204c7b1ad91595881a8880fafdd5fce1b5cf94bc7a                        0.0s
+ => => naming to docker.io/library/my-nginx                                                                         0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+```
