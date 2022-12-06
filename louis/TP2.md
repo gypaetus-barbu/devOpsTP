@@ -70,3 +70,16 @@ docker container rm c48e5c17bed4
 
 c48e5c17bed4
 ```
+
+## f. Relancez le même container sans l'option -v puis utilisez la commande cp pour servir votre fichier
+
+```bash
+docker run -d -p 80:80 nginx
+
+docker container ls
+
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                NAMES
+c48e5c17bed4   nginx     "/docker-entrypoint.…"   8 minutes ago   Up 8 minutes
+
+docker cp $PWD/html/index.html c48e5c17bed4:/usr/share/nginx/html/index.html
+```
