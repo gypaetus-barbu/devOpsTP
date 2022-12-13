@@ -16,4 +16,13 @@
 ###   COPY $PWD/html/index.html /usr/share/nginx/html/index.html
 
 ###   EXPOSE 80
-## c. Dans 
+## c. A la création de l'image avec un dockerfile on a un controle précis sur l'image qui va etre créer.
+
+# 5. Utiliser une base de donnée dans un container docker
+## a. Récupérer les images mysql (ou mariadb) et phpmyadmin/phpymyadmin depuis le Docker Hub
+### sudo docker pull mysql
+## b. Executer 2 containers à partir des images Lancer le phpmyadmin (conteneurisé et publié sur un port) et ajoutez une table via l'interface
+### container:
+### sudo docker run --name mysql_server -e MYSQL_ROOT_PASSWORD=123456 -d mysql
+### sudo docker run --name phpmyadmin -d --link mysql_server:db -p 8080:80 phpmyadmin/phpmyadmin
+###
