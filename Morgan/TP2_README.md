@@ -8,14 +8,14 @@ b. utiliser une commande pour verifier que vous disposez bien de l'image en loca
 sudo docker images ls
 ![img_1.png](img_1.png)
 
-c. creer un ficher dans votre repos local contenant "hello world" :
+c. creer un ficher dans votre repos local contenant "hello world" : 
 ![img_2.png](img_2.png)
 ![img_3.png](img_3.png)
 
 d. demarrer un nouveau container et servir la page html :
 ![img_5.png](img_5.png)
 
-e. supprimer le container :
+e. supprimer le container : 
 ![img_6.png](img_6.png)
 
 f. relancer le meme container sans l'option -v puis utiliser la commande cp pour servir votre fichier :
