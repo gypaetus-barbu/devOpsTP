@@ -9,6 +9,8 @@ sudo docker images ls
 ![img_1.png](img_1.png)
 
 c. creer un ficher dans votre repos local contenant "hello world" : 
+
+
 ![img_2.png](img_2.png)
 ![img_3.png](img_3.png)
 
@@ -16,6 +18,8 @@ d. demarrer un nouveau container et servir la page html :
 ![img_5.png](img_5.png)
 
 e. supprimer le container : 
+
+
 ![img_6.png](img_6.png)
 
 f. relancer le meme container sans l'option -v puis utiliser la commande cp pour servir votre fichier :
@@ -36,3 +40,4 @@ b. executer cette nouvelle image de maniere a servir ./html/index.html
 ![img_15.png](img_15.png)
 
 c. quelles différences observez--vous entre les questions 3. et 4.., trouvez les avantages & inconvenients de chque procédure
+En creant une image avec un dockerfile on peut avoir un controle plus fin sur l'image que l'on va creer, on peut par exemple ajouter des variables d'environnement, des commandes, des fichiers de configuration, etc.
