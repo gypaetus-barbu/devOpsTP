@@ -33,6 +33,6 @@ a. a l'aide d'un dockerfile, creer une image qui permet d'executer un serveur we
 ![img_14.png](img_14.png)
 
 b. executer cette nouvelle image de maniere a servir ./html/index.html
-
+![img_15.png](img_15.png)
 
 c. quelles différences observez--vous entre les questions 3. et 4.., trouvez les avantages & inconvenients de chque procédure
