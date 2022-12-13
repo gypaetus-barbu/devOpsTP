@@ -1,18 +1,18 @@
-3. executer un serveur web :
+3. Executer un serveur web :
 
-a. recupere l'image sur le docker hub :
+a. Recupere l'image sur le docker hub :
 sudo docker pull nginx
 
 
 ![img.png](assets/img.png)
 
-b. utiliser une commande pour verifier que vous disposez bien de l'image en local :
+b. Utiliser une commande pour verifier que vous disposez bien de l'image en local :
 sudo docker images ls
 
 
 ![img_1.png](assets/img_1.png)
 
-c. creer un ficher dans votre repos local contenant "hello world" : 
+c. Creer un ficher dans votre repos local contenant "hello world" : 
 
 
 ![img_2.png](assets/img_2.png)
@@ -20,17 +20,17 @@ c. creer un ficher dans votre repos local contenant "hello world" :
 
 ![img_3.png](assets/img_3.png)
 
-d. demarrer un nouveau container et servir la page html :
+d. Demarrer un nouveau container et servir la page html :
 
 
 ![img_5.png](assets/img_5.png)
 
-e. supprimer le container : 
+e. Supprimer le container : 
 
 
 ![img_6.png](assets/img_6.png)
 
-f. relancer le meme container sans l'option -v puis utiliser la commande cp pour servir votre fichier :
+f. Relancer le meme container sans l'option -v puis utiliser la commande cp pour servir votre fichier :
 
 
 ![img_7.png](assets/img_7.png)
@@ -45,9 +45,9 @@ f. relancer le meme container sans l'option -v puis utiliser la commande cp pour
 ![img_10.png](assets/img_10.png)
 
 
-4. build une image :
+4. Build une image :
 
-a. a l'aide d'un dockerfile, creer une image qui permet d'executer un serveur web :
+a. A l'aide d'un dockerfile, creer une image qui permet d'executer un serveur web :
 
 
 ![img_11.png](assets/img_11.png)
@@ -62,14 +62,57 @@ a. a l'aide d'un dockerfile, creer une image qui permet d'executer un serveur we
 ![img_14.png](assets/img_14.png)
 
 
-b. executer cette nouvelle image de maniere a servir ./html/index.html :
+b. Executer cette nouvelle image de maniere a servir ./html/index.html :
 
 
 ![img_15.png](assets/img_15.png)
 
 
 
-c. quelles différences observez--vous entre les questions 3. et 4.., trouvez les avantages & inconvenients de chque procédure
+c. Quelles différences observez--vous entre les questions 3. et 4.., trouvez les avantages & inconvenients de chque procédure
 
 
 En creant une image avec un dockerfile on peut avoir un controle plus fin sur l'image que l'on va creer, on peut par exemple ajouter des variables d'environnement, des commandes, des fichiers de configuration, etc.
+
+
+5. Utiliser une base de données dans un container docker :
+
+
+a. Recuperer les images mysql(ou mariadb) et phpmyadmin/phpymyadmin depuis le Docker Hub :
+
+
+![img_16.png](assets/img_16.png)
+
+
+![img_17.png](assets/img_17.png)
+
+b. Executer 2 containers à partirdes images, ajouter une table et quelques lignes dans votre base via phpmyadmin :
+
+
+![img_18.png](assets/img_18.png)
+
+
+![img_19.png](assets/img_19.png)
+
+
+![img_20.png](assets/img_20.png)
+
+
+6. Utilisation de docker-compose.yml :
+
+
+a. Aller lire la documentation de docker-compose et essayer de décrire à quoi sert cette commande VS la commande docker run :
+
+
+Docker-compose est un outil qui permet de definir et de lancer des applications docker composees de plusieurs containers
+
+
+b. Quelle commande permet de lancer tous les containers du fichier yaml ? Quelle commande permet de les stopper ?
+
+
+La commande pour lancer : docker-compose up -d
+
+
+La commande pour stopper : docker-compose down
+
+
