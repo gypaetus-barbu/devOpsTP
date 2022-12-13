@@ -116,3 +116,14 @@ La commande pour lancer : docker-compose up -d
 La commande pour stopper : docker-compose down
 
 
+c. Ecrivez un fichier docker-compose.yml pour servir votre base de données (mysql, mariadb et etc) et phpmyadmin :
+
+
+![img_21.png](assets/img_21.png)
+
+
+dans cette exemple on a 2 containers, le premier est un container mysql et le second est un container phpmyadmin
+
+on peut retouver l'ensenble des configuration dans la commande docker run dans le fichier docker-compose.yml
+
+pour acceder a phpmyadmin on utilise l'url http://localhost:8080
