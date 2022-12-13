@@ -25,4 +25,36 @@
 ### container:
 ### sudo docker run --name mysql_server -e MYSQL_ROOT_PASSWORD=123456 -d mysql
 ### sudo docker run --name phpmyadmin -d --link mysql_server:db -p 8080:80 phpmyadmin/phpmyadmin
-###
+
+# 6. Utilisation de docker-compose.yml
+## a. Allez lire la documentation de docker-compose et essayer de décrire à quoi sert cette commande VS la commande docker run
+### docker-compose permet de lancer des application docker contenant plusieurs container
+
+## b. Quelle commande permet de lancer tous les containers du fichier yaml ? Quelle commande permet de les stopper ?
+### sudo docker-compose up -d
+### sudo docker-compose down
+
+## c. Ecrivez un fichier docker-compose.yml pour servir votre base de données (mysql,mariadb,etc.) ET phpmyadmin
+```yml
+version: '3.8'
+
+services:
+  image: mysql
+  container_name: mysql_server
+  environement:
+    MYSQL_ROOT_PASSWORD: 123456
+  ports:
+    - 3306:3306
+  volumes:
+    - $$PWD/data:/var/lib/mysql
+  restart: always
+
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  container_name: phpmyadmin
+  ports:
+    - 8080:80
+  links:
+    - mysql_server:db
+  restart: always
+  ```
