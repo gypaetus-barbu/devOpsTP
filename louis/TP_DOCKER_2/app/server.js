@@ -1,9 +1,5 @@
 const db = require('./models/index');
 const app = require('./app');
-
-console.log('Starting server...');
-console.log(process.env)
-
 db.instance.sync({force: true}).then(async () => {
     console.log('Database connected an synchronized');
 
