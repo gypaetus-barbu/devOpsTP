@@ -1,0 +1,22 @@
+version: "3.8"
+
+services: 
+  db:
+    image: mariadb:10.5
+    container_name: db
+    restart: always
+    env_file:
+      - .env
+  api:
+    build: ./app
+    container_name: api
+    retstart: always
+    ports: 
+      - "3000:3000"
+    env_file:
+      - .env
+    links:
+      - db
+    depends_on:
+      - db
+      
