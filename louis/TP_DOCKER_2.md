@@ -26,7 +26,7 @@ docker run -d --name mariadb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=tp_do
 
 # 4. Adapter le fichiers models/index.js et le db.config. js pour utiliser une base mysql plutôt que sqlite3 Rebuildez votre image docker et relancez un container, vérifiez que vous arrivez à utiliser l'app
 
-pour cela j'ajoute et je commante les lignes suivantes dans le fichier `models/index.js`:
+pour cela j'ajoute et je commante les lignes suivantes dans le fichier `db.config.js`:
 
 ```js
 // Uncomment this block to use sqlite
@@ -155,4 +155,3 @@ pour ne pas installer les dépendances de développement qui ne sont pas nécess
 ## Q3: Comment peut-on analyser la sécurité d'une application comme celle-ci (dépendances & image docker)
 
 on peut utiliser la commade `docker scan` pour scanner l'image docker et vérifier les vulnérabilités:
-
