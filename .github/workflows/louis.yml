@@ -46,9 +46,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Install dependencies
-        run: npm install
       - name: Docker build
-        run: docker build -t louis/tp3_docker:latest .
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/tp3_docker:latest .
       - name: Docker push
-        run: docker push louis/tp3_docker:latest
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/tp3_docker:latest
