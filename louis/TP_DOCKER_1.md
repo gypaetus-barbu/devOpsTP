@@ -266,20 +266,30 @@ services:
     container_name: mysql_server
     environment:
       MYSQL_ROOT_PASSWORD: 123456
-    ports:
-      - 3306:3306
-    volumes:
-      - $PWD/data:/var/lib/mysql
-    restart: always
+      MYSQL_DATABASE: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: 123456
+    networks:
+      - bdd
+    restart: 
+      always
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
+    environment:
+      PMA_HOST: mysql_server
     ports:
       - 8080:80
-    links:
-      - mysql_server:db
-    restart: always
+    networks:
+      - bdd
+    depends_on:
+      - mysql_server
+    restart: 
+      always
+
+networks:
+  bdd:
 ```
 
 dans cette exemple on a 2 containers, le premier est un container mysql et le second est un container phpmyadmin
