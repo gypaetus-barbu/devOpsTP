@@ -4,19 +4,26 @@ services:
   db:
     image: mariadb:10.5
     container_name: db
-    restart: always
     env_file:
       - .env
+    networks:
+      - bdd
+    restart:
+      always
+
   api:
     ## build: ./app
     build: ./app
     container_name: api
-    restart: always
     ports:
       - "3000:3000"
     env_file:
       - .env
-    links:
-      - db
     depends_on:
       - db
+    networks:
+      - bdd
+    restart:
+      always
+networks:
+  bdd:
